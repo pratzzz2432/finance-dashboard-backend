@@ -1,8 +1,7 @@
-# Use official Java image
-FROM openjdk:17-jdk-slim
+FROM eclipse-temurin:17-jdk
 
-# Copy jar file
+WORKDIR /app
+
 COPY target/*.jar app.jar
 
-# Run the app
-ENTRYPOINT ["java","-jar","/app.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
